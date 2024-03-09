@@ -2,7 +2,7 @@
     "ghosts": [
         {
             "ghost": "Spirit",
-            "name": "Spirit",
+            "name": "スピリット",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -18,13 +18,13 @@
             ],
             "nightmare_evidence": null,
             "behavior": [
-                "<Tells>",
-                "Incensing the ghost will prevent a hunt for 180s instead of the normal 90s"
+                "<特徴>",
+                "浄化香を使う（スマッジする）と次のハントまでは180秒となる。（通常は90秒）"
             ]
         },
         {
             "ghost": "Wraith",
-            "name": "Wraith",
+            "name": "レイス",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -40,16 +40,16 @@
             ],
             "nightmare_evidence": null,
             "behavior": [
-                "<Tells>",
-                "Ghost will never step in salt of any tier",
-                "Will not be slowed down by tier 3 salt during a hunt",
-                "<Behaviors>",
-                "Can teleport to random players, leaving EMF 2 or EMF 5"
+                "<特徴>",
+                "どのティアの塩でも絶対に踏まない。",
+                "ハント中にティア3塩で遅くならない。",
+                "<アビリティ>",
+                "ランダムのプレイヤーの場所にワープすることが可能。その際、EMF2かEMF 5が残される。"
             ]
         },
         {
             "ghost": "Phantom",
-            "name": "Phantom",
+            "name": "ファントム",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -65,18 +65,18 @@
             ],
             "nightmare_evidence": null,
             "behavior": [
-                "<Tells>",
-                "Does not appear in ghost photo",
-                "During an event or during DOTs state, taking a photo will cause the ghost to disappear",
-                "Less visible during hunts (See 'Guides' tab)",
-                "Player loses 0.5% sanity per second while in heartbeat range and the ghost is visible during events/hunt even without line-of-sight",
-                "<Behaviors>",
-                "Can roam to a random player, leaving EMF 2"
+                "<特徴>",
+                "ゴーストフォトに映らない。",
+                "超常現象の際やDOTsの際、写真を撮ると見えなくなる。",
+                "ハント中、点滅速度が遅くて姿が見えない時間が長い。 （詳しくはガイドタブをご参照ください）",
+                "ハントや超常現象の際に心拍音が聞こえる範囲であれば、1秒毎に0.5%正気度が低下される。（隠れても低下される）",
+                "<アビリティ>",
+                "プレイヤーの場所にワープすることが可能。その際、EMF２が残される。"
             ]
         },
         {
             "ghost": "Poltergeist",
-            "name": "Poltergeist",
+            "name": "ポルターガイスト",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -92,17 +92,17 @@
             ],
             "nightmare_evidence": null,
             "behavior": [
-                "<Tells>",
-                "Can throw multiple objects at once, decreasing player sanity 2% per item thrown",
-                "Will throw an item every 0.5s during a hunt",
-                "<Behaviors>",
-                "Higher chance to throw & interact with objects",
-                "Can throw objects faster and further"
+                "<特徴>",
+                "同時に複数の物体を投げ飛ばす（干渉する）ことができる。投げ飛ばされた物体の数ｘ2％正気度が低下される。",
+                "ハント中、0.5秒毎に物体を投げ飛ばす。",
+                "<アビリティ>",
+                "他のゴーストより物体と干渉するおよび投げ飛ばす確率が高い。",
+                "他のゴーストより素早くおよび遠く投げ飛ばせる。"
             ]
         },
         {
             "ghost": "Banshee",
-            "name": "Banshee",
+            "name": "バンシー",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -118,21 +118,21 @@
             ],
             "nightmare_evidence": null,
             "behavior": [
-                "<Tells>",
-                "Banshee scream through paramic  <span class=\"sound\" onClick=\"playSound('https://zero-network.net/phasmophobia/static/assets/banshee_scream.mp3')\">🔊</span>",
-                "Target loses 15% sanity if they touch the ghost during a singing ghost event (standard drain is 10%)",
-                "<Behaviors>",
-                "Will only go after its target during a hunt (unless target is outside)",
-                "Will roam toward its target, without leaving EMF 2",
-                "Will attempt to roam toward their target while in DOTs state",
-                "Prefers singing ghost events",
-                "<Hunt Sanity>",
-                "Hunts when target's sanity is 50% or lower (even if target is outside), meaning it can hunt as early as 87% average sanity"
+                "<特徴>",
+                "指向性マイクで特別の悲鳴が聞こえる。<span class=\"sound\" onClick=\"playSound('https://zero-network.net/phasmophobia/static/assets/banshee_scream.mp3')\">🔊</span>",
+                "ゴーストが歌っている超常現象の際にプレイヤーがゴーストに触れた場合は正気度が15%低下される。（通常は10%低下される）",
+                "<アビリティ>",
+                "一人のプレイヤーをターゲットとし、そのプレイヤーが建物の中であれば、ハントの際は特定のターゲットだけを襲う。",
+                "EMF2を残さずにターゲットのところへ徘徊する。",
+                "DOTS状態でターゲットに徘徊しようとする。",
+                "歌う超常現象を好む。",
+                "<ハントが発生する正気度>",
+                "ターゲットの正気度が50%になるとターゲットが建物の外でもハントが発生できるようになる。これによって速くても平均正気度が87%になったらハント発生できるようになりる。"
             ]
         },
         {
             "ghost": "Jinn",
-            "name": "Jinn",
+            "name": "ジン",
             "min_speed": 1.7,
             "max_speed": 2.5,
             "alt_speed": null,
@@ -148,17 +148,17 @@
             ],
             "nightmare_evidence": null,
             "behavior": [
-                "<Tells>",
-                "Ability to drop nearby players' sanity by 25%, with EMF 2 or EMF 5 at the breaker (when breaker is on)",
-                "<Behaviors>",
-                "Can not turn off fuse box directly",
-                "<Hunt Speed>",
-                "2.5m/s when fuse box is on, has LOS, and is further than 3m from the seen player, 1.7m/s otherwise"
+                "<特徴>",
+                "ブレーカーが落ちていない状態で、ジンはプレイヤーの近くにいるとそのプレイヤーと同じ部屋にいるプレイヤー全員の正気度を25%低下させることが可能。その際、ブレーカーの場所にEMF2や5が残される。",
+                "<アビリティ>",
+                "直接ブレーカーを落とすことが不可。",
+                "<ハント時移動速度>",
+                "通常は1.7m/sだが、ブレーカーが落ちていない状態で視認加速が入ると2.5m/s。"
             ]
         },
         {
             "ghost": "Mare",
-            "name": "Mare",
+            "name": "メアー",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -174,19 +174,19 @@
             ],
             "nightmare_evidence": null,
             "behavior": [
-                "<Tells>",
-                "Ability to immediately turn off a light that a player has turned on (can only test for ability once every 10s)",
-                "Cannot turn on lights (keyboard and TV excluded)",
-                "<Behaviors>",
-                "More likely to turn off and bust lights",
-                "More likely to wander to a room where lights are off",
-                "<Hunt Sanity>",
-                "60% when lights are off in the ghost's current room, 40% when on"
+                "<特徴>",
+                "プレイヤーが部屋のスイッチをオンにする場合、メアーはすぐにそのスイッチをオフにすることが可能。（スイッチ毎に10秒に一回しかできない）",
+                "キーボードとテレビ以外電気をつけることができない。",
+                "<アビリティ>",
+                "他のゴーストより電気を消すや壊す確率が高い。",
+                "電気が消されている部屋に徘徊する確率が高い。",
+                "<ハントが発生する正気度>",
+                "ゴーストがいる部屋に電気が消されている場合は60%だが電気がついている場合は40%。"
             ]
         },
         {
             "ghost": "Revenant",
-            "name": "Revenant",
+            "name": "レヴナント",
             "min_speed": 1.0,
             "max_speed": 3.0,
             "alt_speed": null,
@@ -202,13 +202,13 @@
             ],
             "nightmare_evidence": null,
             "behavior": [
-                "<Hunt Speed>",
-                "3.0m/s immediately once the player has been sensed (equipment, voice, or line of sight) and until ghost has reached the players last known location where it will gradually slow down to 1m/s"
+                "<ハント時移動速度>",
+                "プレイヤーが感知された際（電子機器、声または視界に入ることで）に3.0m/sになるが、最後にプレイヤーが視界に入った場所にたどり着くと1m/sまで少しずつ減速する。"
             ]
         },
         {
             "ghost": "Shade",
-            "name": "Shade",
+            "name": "シェード",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -224,18 +224,18 @@
             ],
             "nightmare_evidence": null,
             "behavior": [
-                "<Tells>",
-                "Does not do interactions that result in EMF 2, 3, or 5 with someone in the same room (except writing and blowing out firelights)",
-                "Will not hunt or do events with someone in the same room",
-                "<Behaviors>",
-                "More ghost events at lower average sanity (cannot do ghost events at 100% sanity)",
-                "More likely to appear as shadow ghost model during events",
-                "Has a increased chance to appear as a shadow if summoned from music box, monkey paw, or summoning circle"
+                "<特徴>",
+                "ゴーストライティングと灯火を消すこと以外、プレイヤーがゴーストと同じ部屋の場合はEMF2、3、または5を残す超常現象を起こさない。",
+                "プレイヤーがゴーストと同じ部屋のばあい、ハントや超常現象を起こさない。",
+                "<アビリティ>",
+                "平均正気度が低い程超常現象を起こす頻度が高くなる。100%正気度の場合は超常現象を起こすことができない。",
+                "超常現象の際、影で現れる可能性が通常のゴーストより高い。",
+                "魔法陣、オルゴールや猿の手で実体化した際は影で現れる可能性がより高い。"
             ]
         },
         {
             "ghost": "Demon",
-            "name": "Demon",
+            "name": "デーモン",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -251,18 +251,18 @@
             ],
             "nightmare_evidence": null,
             "behavior": [
-                "<Tells>",
-                "Incensing the ghost will prevent a hunt for 60s instead of the normal 90s",
-                "20s minimum hunt cool-down (normal is 25s)",
-                "<Behaviors>",
-                "Crucifix range increased by 50% per tier (4.5m, 6m, 7.5m respectively)",
-                "<Hunt Sanity>",
-                "Ability to hunt at any sanity, hunts normally at 70%"
+                "<特徴>",
+                "浄化香を使う（スマッジする）と次のハントまでの通常90秒が60秒となる。",
+                "ハントクールダウンは最低20秒。（通常は25秒）",
+                "<アビリティ>",
+                "十字架の有効範囲半径はティア毎に50%大きくなる。(ティア1: 4.5m, ティア2: 6m, ティア3: 7.5mそれぞれになる)",
+                "<ハントが発生する正気度>",
+                "正気度と関係なくハントを発生することが可能だが、通常は70%でハントが発生される。"
             ]
         },
         {
             "ghost": "Yurei",
-            "name": "Yurei",
+            "name": "幽霊",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -278,16 +278,16 @@
             ],
             "nightmare_evidence": null,
             "behavior": [
-                "<Tells>",
-                "Can shut a door and drop sanity of nearby players by 15% <b><i>if</i></b> a door is in the room",
-                "Only ghost that can close or interact with an exit door outside of a hunt or ghost event",
-                "<Behaviors>",
-                "Incense traps ghost in its room and prevents wandering for 60 seconds"
+                "<特徴>",
+                "<b>部屋にドアがある場合</b>、そのドアを閉めることができる。その際に近くにいるプレイヤー全員の正気度は15%低下される。",
+                "ハントと超常現象以外で出口ドアに接触できる唯一のゴースト。",
+                "<アビリティ>",
+                "浄化香を使う（スマッジする）と60秒間ゴースト部屋に閉じ込めることができる。（この間、ゴーストが徘徊できなくなる）"
             ]
         },
         {
             "ghost": "Oni",
-            "name": "Oni",
+            "name": "鬼",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -303,18 +303,18 @@
             ],
             "nightmare_evidence": null,
             "behavior": [
-                "<Tells>",
-                "Drains 20% on ghost events, instead of 10%",
-                "Will <b><i>not</i></b> do 'ghost mist' event",
-                "More visible during hunts (See 'Guides' tab)",
-                "<Behaviors>",
-                "More active around multiple people",
-                "More likely to appear as full ghost model"
+                "<特徴>",
+                "超常現象で低下される正気度は20%。(通常は10%)",
+                "白い霧を飛ばすことができない。",
+                "ハント中、点滅速度が遅くて姿が見える時間が長い。 （詳しくはガイドタブをご参照ください）",
+                "<アビリティ>",
+                "複数のプレイヤーがいると活性度が高い。",
+                "姿が実体となる確率が高い。（超常現象の際、影や透明の姿の確率が通常より低い）"
             ]
         },
         {
             "ghost": "Yokai",
-            "name": "Yokai",
+            "name": "妖怪",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -330,18 +330,18 @@
             ],
             "nightmare_evidence": null,
             "behavior": [
-                "<Tells>",
-                "Hearing/electronic detection distance is less than 2.5m during hunts",
-                "<Behaviors>",
-                "More active when talked to",
-                "Music box can be brought much closer to the ghost before it breaks",
-                "<Hunt Sanity>",
-                "Can hunt up to 80% sanity when talking near it, hunts normally at 50%"
+                "<特徴>",
+                "ハント中、電子機器やプレイヤーの声を感知できる距離が2.5mより短くなる。",
+                "<アビリティ>",
+                "ゴーストに話をかけるとより活性する。",
+                "オルゴールを使う際、通常のゴーストより近くに持って行かないと超常現象とその語のハントが発生しない。",
+                "<ハントが発生する正気度>",
+                "プレイヤーが近くで話している場合は80%でハント発生が可能。それ以外は50%。"
             ]
         },
         {
             "ghost": "Hantu",
-            "name": "Hantu",
+            "name": "ハントゥ",
             "min_speed": 1.44,
             "max_speed": 2.7,
             "alt_speed": null,
@@ -357,21 +357,21 @@
             ],
             "nightmare_evidence": "Freezing",
             "behavior": [
-                "<Tells>",
-                "Ghost can have visible freezing breath in any room during hunts with the breaker off/broken",
-                "Cannot turn breaker on",
-                "<Behaviors>",
-                "High chance to turn breaker off",
-                "<Hunt Speed>",
-                "Faster in colder temperatures",
-                "<b>Does not speed up in line-of-sight</b>",
-                "<Evidence>",
-                "Guaranteed freezing on Nightmare / Insanity mode"
+                "<特徴>",
+                "ブレーカが落ちているおよび壊れている場合、ハント中にゴーストの息が白くてみえる。",
+                "ブレーカーを直すことができない。",
+                "<アビリティ>",
+                "ブレーカーを落とす確率が高い。",
+                "<ハント時移動速度>",
+                "温度が寒い程移動速度が速くなる。",
+                "<b>視認加速はない。</b>",
+                "<証拠>",
+                "ナイトメアやインサニティで氷点下は確実に出る。"
             ]
         },
         {
             "ghost": "Goryo",
-            "name": "Goryo",
+            "name": "御霊",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -387,18 +387,18 @@
             ],
             "nightmare_evidence": "DOTs",
             "behavior": [
-                "<Tells>",
-                "DOTs only appear on video camera and will not show if a player is in the same room (DOTs state can start outside of room and enter a player's room)",
-                "<Behaviors>",
-                "Can not change favorite rooms",
-                "Does not leave room as often",
-                "<Evidence>",
-                "Guaranteed DOTs on Nightmare / Insanity mode"
+                "<特徴>",
+                "DOTｓはプレイヤーが同じ部屋にいると発生しない。または、発生した場合にビデオカメラでしかみれない。（ゴーストは部屋の外からDOTｓ状態になり、発生し、そしてその状態でプレイヤーのいる部屋に入ることが可能）",
+                "<アビリティ>",
+                "ゴースト部屋の移動は不可。",
+                "徘徊する頻度が通常のゴーストより低い。",
+                "<証拠>",
+                "ナイトメアやインサニティでDOTsは確実に出る。"
             ]
         },
         {
             "ghost": "Myling",
-            "name": "Myling",
+            "name": "マイリング",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -414,15 +414,15 @@
             ],
             "nightmare_evidence": null,
             "behavior": [
-                "<Tells>",
-                "Footsteps and vocals cannot be heard more than 12m away during hunts (normal is 20m)",
-                "<Behaviors>",
-                "Lots of paranormal sounds through paramic"
+                "<特徴>",
+                "ハント中、足音や声は12m以上の距離だと聞こえなくなる。(通常は20m)",
+                "<アビリティ>",
+                "指向性マイクで怪奇音の頻度が高い。"
             ]
         },
         {
             "ghost": "Onryo",
-            "name": "Onryo",
+            "name": "怨霊",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -438,18 +438,18 @@
             ],
             "nightmare_evidence": null,
             "behavior": [
-                "<Tells>",
-                "Will hunt at any sanity after extinguishing every 3rd flame if no other flames or crucifix will prevent it",
-                "<Behaviors>",
-                "Flames act like crucifixes, will blow out a flame if it tries to hunt (within 4m)",
-                "More likely to extinguish a flame, the more players that are dead",
-                "<Hunt Sanity>",
-                "Can hunt at any sanity using its ability, hunts normally at 60%"
+                "<特徴>",
+                "十字架およびもう一つの灯火がなければ、正気度と関係なく灯火が3回消される毎にハントが発生する。",
+                "<アビリティ>",
+                "灯火は十字架と同じ効果：ハント発生しようとすると灯火が消される。(有効範囲半径は4m)",
+                "死んでいるプレイヤーの人数が高い程、灯火が消される確率が高くなる。",
+                "<ハントが発生する正気度>",
+                "特徴やアビリティによってどの正気度でもハント発生は可能。それ以外は60%。"
             ]
         },
         {
             "ghost": "The Twins",
-            "name": "The Twins",
+            "name": "ツインズ",
             "min_speed": 1.53,
             "max_speed": 1.87,
             "alt_speed": null,
@@ -465,17 +465,17 @@
             ],
             "nightmare_evidence": null,
             "behavior": [
-                "<Tells>",
-                "Often do interactions at the same time (at physical location and ranged location)",
-                "<Behaviors>",
-                "Only triggers motion sensors, steps in salt, and gives spirit box at its physical location",
-                "<Hunt Speed>",
-                "1.53m/s when hunting from physical location, 1.87m/s when hunting from ranged location"
+                "<特徴>",
+                "2か所（実体のいる場所と分身がいるもう一つの場所）で同時に頻度高く干渉する。",
+                "<アビリティ>",
+                "モーションセンサーで感知されること、塩に踏み込むこと、スピリットボックスで干渉することは実体のいる場所のみで発生される。",
+                "<ハント時移動速度>",
+                "実体のいる場所からのハントは1.53m/s。分身がいる場所からのハントは1.87m/s。"
             ]
         },
         {
             "ghost": "Raiju",
-            "name": "Raiju",
+            "name": "雷獣",
             "min_speed": 1.7,
             "max_speed": 2.5,
             "alt_speed": null,
@@ -491,17 +491,17 @@
             ],
             "nightmare_evidence": null,
             "behavior": [
-                "<Tells>",
-                "During a hunt, flickers electronics at 15m range instead of 10m",
-                "<Hunt Sanity>",
-                "Can hunt at 65% sanity near active player equipment",
-                "<Hunt Speed>",
-                "2.5m/s near active player equipment, 1.7m/s otherwise"
+                "<特徴>",
+                "ハント中、電子機器の誤作動は15mで発生される。（通常は10m）",
+                "<ハントが発生する正気度>",
+                "プレイヤーの電子機器の近くで65%から。",
+                "<ハント時移動速度>",
+                "プレイヤーの電子機器の近くだと2.5m/s。それ以外は1.7m/s。"
             ]
         },
         {
             "ghost": "Obake",
-            "name": "Obake",
+            "name": "化け狐",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -517,18 +517,18 @@
             ],
             "nightmare_evidence": "Ultraviolet",
             "behavior": [
-                "<Tells>",
-                "Special 6 fingered fingerprints (See 'Guides' tab)",
-                "Has a 6.66% chance to change ghost models when flickering during hunts (guaranteed once per hunt, returns to original model)",
-                "Has a 25% chance to not leave ultraviolet evidence",
-                "Can make fingerprints disappear twice as fast if it uses it's ability",
-                "<Evidence>",
-                "Guaranteed ultraviolet on Nightmare / Insanity mode"
+                "<特徴>",
+                "特別の6本指の指紋。(詳しくはガイドタブをご参照ください)",
+                "ハント中、6.66%確率で変身する（ゴーストの姿を変える）ことができる。(この変身は1回のハント中に必ず1回以上は発生し、1回変身する場合は元の姿に戻る)",
+                "25%確率で紫外線の証拠を残さない。",
+                "アビリティや特徴を使えば指紋を2倍の速度で消えさせることが可能。",
+                "<証拠>",
+                "ナイトメアやインサニティで紫外線証拠は確実に出る。"
             ]
         },
         {
             "ghost": "The Mimic",
-            "name": "The Mimic",
+            "name": "ミミック",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -544,19 +544,19 @@
             ],
             "nightmare_evidence": null,
             "behavior": [
-                "<Tells>",
-                "Always shows orbs as additional fake evidence (4th evidence) even in 0 evidence",
-                "Copies the behavior and traits of other ghosts",
-                "Changes ghost behavior every 30 seconds to 2 minutes",
-                "<Hunt Sanity>",
-                "Copies behavior of currently mimicked ghost",
-                "<Hunt Speed>",
-                "Copies speed of currently mimicked ghost"
+                "<特徴>",
+                "確実に出る偽証拠（4つ目の証拠）としてはゴーストオーブが出る。（証拠のないの設定でもでる）",
+                "他のゴーストの特徴やアビリティをコピーする。",
+                "特徴やアビリティを30秒から2分毎に変える。",
+                "<ハントが発生する正気度>",
+                "真似しているゴーストの特徴やアビリティ依存。",
+                "<ハント時移動速度>",
+                "真似しているゴーストの特徴やアビリティ依存。"
             ]
         },
         {
             "ghost": "Moroi",
-            "name": "Moroi",
+            "name": "モーロイ",
             "min_speed": 1.5,
             "max_speed": 2.25,
             "alt_speed": 3.71,
@@ -572,19 +572,19 @@
             ],
             "nightmare_evidence": "Spirit Box",
             "behavior": [
-                "<Tells>",
-                "Places curse on player when heard through paramic or spirit box, curse drops sanity 2x as fast",
-                "Incense blindness duration increased by 50% (7.5s instead of 5s)",
-                "<Hunt Speed>",
-                "Faster when average sanity is lower, can reach a speed of 3.71 m/s when in line of sight",
-                "Speed will decrease during a hunt if sanity medication is used",
-                "<Evidence>",
-                "Guaranteed spirit box on Nightmare / Insanity mode"
+                "<特徴>",
+                "指向性マイクやスピリットボックス越しで呪いをかけ、その後正気度が2倍より早く低下される。",
+                "ハント中の浄化香(スマッジ)による目眩まし効果が50%増加。 (通常の5秒が7.5秒になる)",
+                "<ハント時移動速度>",
+                "平均正気度が低い程速くなる。視認加速を含めて最高3.71 m/sの移動速度が可能。",
+                "ハント中、精神安定剤を使うと移動速度が遅くなる。",
+                "<証拠>",
+                "ナイトメアやインサニティでスピリットボックスは確実に出る。"
             ]
         },
         {
             "ghost": "Deogen",
-            "name": "Deogen",
+            "name": "デオヘン",
             "min_speed": 0.4,
             "max_speed": 3.0,
             "alt_speed": null,
@@ -600,18 +600,18 @@
             ],
             "nightmare_evidence": "Spirit Box",
             "behavior": [
-                "<Tells>",
-                "Heavy breathing through spirit box when within 1m of the ghost  <span class=\"sound\" onClick=\"playSound('https://zero-network.net/phasmophobia/static/assets/deogen_breathing.mp3')\">🔊</span>",
-                "Cannot hide from a Deogen",
-                "<Hunt Speed>",
-                "3.0m/s when far away, drops to 0.4m/s when close to the player",
-                "<Evidence>",
-                "Guaranteed spirit box on Nightmare / Insanity mode"
+                "<特徴>",
+                "ゴーストの周囲1m以内でスピリットボックスを使うと越しで激しい呼吸音が発生する。<span class=\"sound\" onClick=\"playSound('https://zero-network.net/phasmophobia/static/assets/deogen_breathing.mp3')\">🔊</span>",
+                "デオヘンから隠れることが不可。",
+                "<ハント時移動速度>",
+                "遠くにいると3.0m/sが、近くにいると0.4m/sまで遅くなる。",
+                "<証拠>",
+                "ナイトメアやインサニティでスピリットボックスは確実に出る。"
             ]
         },
         {
             "ghost": "Thaye",
-            "name": "Thaye",
+            "name": "セーイ",
             "min_speed": 1.0,
             "max_speed": 2.75,
             "alt_speed": null,
@@ -627,26 +627,26 @@
             ],
             "nightmare_evidence": null,
             "behavior": [
-                "<Behaviors>",
-                "Ghost ages over time (every 1-2 minutes) while player is nearby",
-                "More active when younger",
-                "Age response on Ouija board increases as Thaye ages",
-                "<Hunt Sanity>",
-                "Hunts at 75% at its youngest, 15% at its oldest",
-                "<Hunt Speed>",
-                "2.75m/s at its youngest, 1.0m/s at its oldest",
-                "<b>Does not speed up in line-of-sight</b>"
+                "<アビリティ>",
+                "プレイヤーがゴーストの付近にいると1-2分ごとにゴーストが老化する。",
+                "若い程活性的。",
+                "ウィジャ盤でゴーストの年齢を聞くとセーイの老化によってその答えが増加していく。",
+                "<ハントが発生する正気度>",
+                "初めは75%と。老化すると徐々に下がっていき最終的に15%まで下がる。",
+                "<ハント時移動速度>",
+                "初めは2.75m/s老化すると徐々に下がっていき最終的に1.0m/sまで下がる。",
+                "<b>視認加速はない</b>"
             ]
         }
     ],
     "version": "v0.9.5.0",
     "evidence": {
         "EMF 5":"EMF 5",
-        "Ultraviolet":"Ultraviolet",
-        "Writing":"Writing",
-        "Freezing":"Freezing",
+        "紫外線":"Ultraviolet",
+        "ゴーストライティング":"Writing",
+        "氷点下":"Freezing",
         "DOTs":"DOTs",
-        "Ghost Orbs":"Ghost Orbs",
-        "Spirit Box":"Spirit Box"
+        "ゴーストオーブ":"Ghost Orbs",
+        "スピリットボックス":"Spirit Box"
     }
 }
