@@ -2,8 +2,8 @@ function getCookie(e){let t=e+"=",i=decodeURIComponent(document.cookie).split(";
 function setCookie(e,t,i){let n=new Date;n.setTime(n.getTime()+864e5*i);let o="expires="+n.toUTCString();document.cookie=e+"="+t+";"+o+";path=/"}
 function rev(obj,value){for(var prop in obj){if(obj.hasOwnProperty(prop)){if(obj[prop]===value)return prop;}}}
 
-const all_speed = {"Slow":"Slow","Normal":"Normal","Fast":"Fast"}
-const all_sanity = {"Late":"Late","Average":"Average","Early":"Early","VeryEarly":"VeryEarly"}
+const all_speed = {"Slow":"遅い","Normal":"通常","Fast":"速い"}
+const all_sanity = {"Late":"遅い","Average":"通常","Early":"早い","VeryEarly":"超早い"}
 let all_evidence = []
 let all_ghosts = []
 let all_maps = {}
@@ -1032,7 +1032,7 @@ function checkResetButton(){
 function resetResetButton(){
     $("#reset").removeClass("reset_pulse")
     $("#reset").addClass("standard_reset")
-    $("#reset").html(polled ? "Waiting for others..." : "Reset")
+    $("#reset").html(polled ? "他プレイヤーを待機中。。。" : "リセット")
     $("#reset").attr("ondblclick",null)
     $("#reset").attr("onclick","reset()")
 }
@@ -1056,17 +1056,17 @@ function showVoiceInfo(){
 
 function showSettings(){
     mquery = window.matchMedia("screen and (pointer: coarse) and (max-device-width: 600px)")
-    if (document.getElementById("settings_box").style.left == (mquery.matches ? "calc(-60% - 40px)" : "-32px")){
+    if (document.getElementById("settings_box").style.left == (mquery.matches ? "calc(-60% - 40px)" : "8px")){
         document.getElementById("settings_box").style.boxShadow = "5px 0px 10px 0px #000"
         document.getElementById("settings_tab").style.boxShadow = "5px 6px 5px -2px #000"
         document.getElementById("event_box").style.zIndex= "1"
         document.getElementById("wiki_box").style.zIndex= "1"
         document.getElementById("maps_box").style.zIndex= "1"
         document.getElementById("settings_box").style.zIndex = (mquery.matches ? "10" : "2")
-        document.getElementById("settings_box").style.left = (mquery.matches ? "0px" : "196px")
+        document.getElementById("settings_box").style.left = (mquery.matches ? "0px" : "236px")
     }
     else {
-        document.getElementById("settings_box").style.left = (mquery.matches ? "calc(-60% - 40px)" : "-32px")
+        document.getElementById("settings_box").style.left = (mquery.matches ? "calc(-60% - 40px)" : "8px")
         document.getElementById("settings_box").style.boxShadow = "none"
         document.getElementById("settings_tab").style.boxShadow = "none"
         if(mquery.matches){
@@ -1080,17 +1080,17 @@ function showSettings(){
 
 function showEvent(){
     mquery = window.matchMedia("screen and (pointer: coarse) and (max-device-width: 600px)")
-    if (document.getElementById("event_box").style.left == (mquery.matches ? "calc(-60% - 40px)" : "-182px")){
+    if (document.getElementById("event_box").style.left == (mquery.matches ? "calc(-60% - 40px)" : "-142px")){
         document.getElementById("event_box").style.boxShadow = "5px 0px 10px 0px #000"
         document.getElementById("event_tab").style.boxShadow = "5px 6px 5px -2px #000"
         document.getElementById("settings_box").style.zIndex = "1"
         document.getElementById("wiki_box").style.zIndex= "1"
         document.getElementById("maps_box").style.zIndex= "1"
         document.getElementById("event_box").style.zIndex= (mquery.matches ? "10" : "2")
-        document.getElementById("event_box").style.left = (mquery.matches ? "0px" : "196px")
+        document.getElementById("event_box").style.left = (mquery.matches ? "0px" : "236px")
     }
     else {
-        document.getElementById("event_box").style.left = (mquery.matches ? "calc(-60% - 40px)" : "-182px")
+        document.getElementById("event_box").style.left = (mquery.matches ? "calc(-60% - 40px)" : "-142px")
         document.getElementById("event_box").style.boxShadow = "none"
         document.getElementById("event_tab").style.boxShadow = "none"
         if(mquery.matches){
@@ -1104,17 +1104,17 @@ function showEvent(){
 
 function showWiki(){
     mquery = window.matchMedia("screen and (pointer: coarse) and (max-device-width: 600px)")
-    if (document.getElementById("wiki_box").style.left == (mquery.matches ? "calc(-60% - 40px)" : "-182px")){
+    if (document.getElementById("wiki_box").style.left == (mquery.matches ? "calc(-60% - 40px)" : "-142px")){
         document.getElementById("wiki_box").style.boxShadow = "5px 0px 10px 0px #000"
         document.getElementById("wiki_tab").style.boxShadow = "5px 6px 5px -2px #000"
         document.getElementById("settings_box").style.zIndex = "1"
         document.getElementById("event_box").style.zIndex= "1"
         document.getElementById("maps_box").style.zIndex= "1"
         document.getElementById("wiki_box").style.zIndex= (mquery.matches ? "10" : "2")
-        document.getElementById("wiki_box").style.left = (mquery.matches ? "0px" : "196px")
+        document.getElementById("wiki_box").style.left = (mquery.matches ? "0px" : "236px")
     }
     else {
-        document.getElementById("wiki_box").style.left = (mquery.matches ? "calc(-60% - 40px)" : "-182px")
+        document.getElementById("wiki_box").style.left = (mquery.matches ? "calc(-60% - 40px)" : "-142px")
         document.getElementById("wiki_box").style.boxShadow = "none"
         document.getElementById("wiki_tab").style.boxShadow = "none"
         if(mquery.matches){
@@ -1129,19 +1129,19 @@ function showWiki(){
 
 function showMaps(forceOpen = false, forceClose = false){
     mquery = window.matchMedia("screen and (pointer: coarse) and (max-device-width: 600px)")
-    if (document.getElementById("maps_box").style.left == (mquery.matches ? "calc(-100% + 60px)" : "-388px") && !forceClose){
+    if (document.getElementById("maps_box").style.left == (mquery.matches ? "calc(-100% + 60px)" : "-348px") && !forceClose){
         document.getElementById("maps_box").style.boxShadow = "5px 0px 10px 0px #000"
         document.getElementById("maps_box").style.boxShadow = "5px 6px 5px -2px #000"
         document.getElementById("settings_box").style.zIndex = "1"
         document.getElementById("event_box").style.zIndex= "1"
         document.getElementById("wiki_box").style.zIndex= "1"
         document.getElementById("maps_box").style.zIndex= (mquery.matches ? "10" : "2")
-        document.getElementById("maps_box").style.left = (mquery.matches ? "0px" : "196px")
-        document.getElementById("maps_box").style.width = (mquery.matches ? "calc(100% - 100px)" : "calc(100% - 265px)")
+        document.getElementById("maps_box").style.left = (mquery.matches ? "0px" : "236px")
+        document.getElementById("maps_box").style.width = (mquery.matches ? "calc(100% - 100px)" : "calc(100% - 305px)")
     }
     else if(!forceOpen) {
         document.getElementById("maps_box").style.width = (mquery.matches ? "calc(100% - 100px)" : "556px")
-        document.getElementById("maps_box").style.left = (mquery.matches ? "calc(-100% + 60px)" : "-388px")
+        document.getElementById("maps_box").style.left = (mquery.matches ? "calc(-100% + 60px)" : "-348px")
         document.getElementById("maps_box").style.boxShadow = "none"
         document.getElementById("maps_box").style.boxShadow = "none"
     }
@@ -1209,8 +1209,8 @@ function showTheme(){
 
 function flashMode(){
     var cur_evidence = document.getElementById("num_evidence").value
-    var mode_text = {"-1":"Custom","0":"Apocalypse III","1":"Insanity","2":"Nightmare","3":"Professional","3I":"Intermediate","3A":"Amateur"}[cur_evidence]
-    document.getElementById("game_mode").innerHTML = `${mode_text}<span>(${parseInt(cur_evidence)} evidence)</span>`.replace("-1",document.getElementById("cust_num_evidence").value)
+    var mode_text = {"-1":"カスタム","0":"アポカリプス III","1":"インサニティ","2":"ナイトメア","3":"プロ","3I":"セミプロ","3A":"アマチュア"}[cur_evidence]
+    document.getElementById("game_mode").innerHTML = `${mode_text}<span>(${parseInt(cur_evidence)} タイマー)</span>`.replace("-1",document.getElementById("cust_num_evidence").value)
     $("#game_mode").fadeIn(500,function () {
         $("#game_mode").delay(500).fadeOut(500);
       });

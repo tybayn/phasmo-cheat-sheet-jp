@@ -19,11 +19,11 @@ evi_icons = {
 }
 
 behavior_titles = {
-    "<Tells>":"<div class='dtitle'><i>Tells</i><div class='ddash'></div></div>",
-    "<Behaviors>":"<div class='dtitle'><i>Behaviors</i><div class='ddash'></div></div>",
-    "<Hunt Sanity>":"<div class='dtitle'><i>Hunt Sanity</i><div class='ddash'></div></div>",
-    "<Hunt Speed>":"<div class='dtitle'><i>Hunt Speed</i><div class='ddash'></div></div>",
-    "<Evidence>":"<div class='dtitle'><i>Evidence</i><div class='ddash'></div></div>"
+    "<特徴>":"<div class='dtitle'><i>特徴</i><div class='ddash'></div></div>",
+    "<アビリティ>":"<div class='dtitle'><i>アビリティ</i><div class='ddash'></div></div>",
+    "<ハントが発生する正気度>":"<div class='dtitle'><i>ハントが発生する正気度</i><div class='ddash'></div></div>",
+    "<ハント時移動速度>":"<div class='dtitle'><i>ハント時移動速度</i><div class='ddash'></div></div>",
+    "<証拠>":"<div class='dtitle'><i>証拠</i><div class='ddash'></div></div>"
 }
 
 class Ghost {

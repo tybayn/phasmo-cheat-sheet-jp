@@ -100,19 +100,19 @@ function parse_speech(vtext){
 
     running_log[cur_idx]["Cleaned"] = vtext
 
-    if(vtext.startsWith('ghost speed')){
+    if(vtext.startsWith('ゴースト 速度')){
         document.getElementById("voice_recognition_status").className = null
         document.getElementById("voice_recognition_status").style.backgroundImage = "url(imgs/mic-recognized.png)"
         console.log("Recognized ghost speed command")
-        running_log[cur_idx]["Type"] = "ghost speed"
+        running_log[cur_idx]["Type"] = "ゴースト 速度"
         console.log(`Heard '${vtext}'`)
-        vtext = vtext.replace('ghost speed', "").trim()
-        domovoi_msg += "marked ghost speed as "
+        vtext = vtext.replace('ゴースト 速度', "").trim()
+        domovoi_msg += "ゴーストスピードを"
 
-        vtext = vtext.replace('three','3')
-        vtext = vtext.replace('two','2')
-        vtext = vtext.replace('one','1')
-        vtext = vtext.replace('zero','0')
+        vtext = vtext.replace('三','3')
+        vtext = vtext.replace('二','2')
+        vtext = vtext.replace('一','1')
+        vtext = vtext.replace('零','0')
 
         var smallest_num = '150'
         var smallest_val = 100
@@ -127,7 +127,7 @@ function parse_speech(vtext){
                 smallest_num = all_ghost_speed[i]
             }
         }
-        domovoi_msg += smallest_num
+        domovoi_msg += smallest_num + "とマーク"
 
         document.getElementById("ghost_modifier_speed").value = all_ghost_speed_convert[smallest_num] ?? 2
 
@@ -142,52 +142,42 @@ function parse_speech(vtext){
         running_log[cur_idx]["Domo"] = domovoi_msg
         reset_voice_status()
     }
-    else if(vtext.startsWith('ghost')){
+    else if(vtext.startsWith('ゴースト')){
         document.getElementById("voice_recognition_status").className = null
         document.getElementById("voice_recognition_status").style.backgroundImage = "url(imgs/mic-recognized.png)"
         console.log("Recognized ghost command")
-        running_log[cur_idx]["Type"] = "ghost"
+        running_log[cur_idx]["Type"] = "ゴースト"
         console.log(`Heard '${vtext}'`)
-        vtext = vtext.replace('ghost', "").trim()
-        domovoi_msg += "marked "
+        vtext = vtext.replace('ゴースト', "").trim()
+        domovoi_msg += "ゴースト"
 
-        var smallest_ghost = "Spirit"
+        var smallest_ghost = "スピリット"
         var smallest_val = 100
         var vvalue = 0
-        if(vtext.startsWith("not ") || vtext.startsWith("knot ") || vtext.startsWith("knight ")|| vtext.startsWith("night ")){
-            vtext = vtext.replace('knot ', "").replace('not ', "").replace('knight ', "").replace('night ', "").trim()
+        if(vtext.startsWith("ではない")){
+            vtext = vtext.replace('ではない', "").trim()
             vvalue = 0
-            domovoi_msg += "not "
+            domovoi_msg += "ではない"
         }
-        else if(vtext.startsWith("undo ") || vtext.startsWith("undue ") || vtext.startsWith("on do ") || vtext.startsWith("on due ") || vtext.startsWith("clear")){
-            vtext = vtext.replace('undo ', "").replace('undue ', "").replace("on do ","").replace("on due ","").replace("clear ","").trim()
+        else if(vtext.startsWith("クリア")){
+            vtext = vtext.replace('クリア', "").trim()
             vvalue = 0
-            domovoi_msg = "cleared "
+            domovoi_msg = "クリア"
         }
-        else if(vtext.startsWith("guess ")){
-            vtext = vtext.replace('guess ', "").trim()
-            vvalue = 3
-            domovoi_msg = "guessed "
-        }
-        else if(vtext.startsWith("select ") || vtext.startsWith("deselect ")){
-            vtext = vtext.replace('deselect ', "").replace('select ', "").trim()
+        else if(vtext.startsWith("選択")){
+            vtext = vtext.replace('選択', "").trim()
             vvalue = 2
-            domovoi_msg = "selected "
+            domovoi_msg = "選択"
         }
-        else if(vtext.startsWith("hide ") || vtext.startsWith("remove ") || vtext.startsWith("removes ")){
-            vtext = vtext.replace('hide ', "").replace('removes ', "").replace('remove ', "").trim()
+        else if(vtext.startsWith("削除")){
+            vtext = vtext.replace('削除', "").trim()
             vvalue = -1
-            domovoi_msg = "removed "
+            domovoi_msg = "削除"
         }
-        else if(vtext.startsWith("dead ") || vtext.startsWith("killed by ") || vtext.startsWith("killed ")){
-            vtext = vtext.replace('dead ', "").replace('killed by ', "").replace('killed ', "").trim()
-            vvalue = -2
-            domovoi_msg = "killed by "
-        }
-        else if(vtext.startsWith("show ") || vtext.startsWith("data ") || vtext.startsWith("info ")){
-            vtext = vtext.replace('show ', "").replace('data ', "").replace('info ', "").trim()
+        else if(vtext.startsWith("見せる") || vtext.startsWith("概要") || vtext.startsWith("見せる概要")){
+            vtext = vtext.replace('見せる', "").replace('概要', "").replace('見せる概要', "").trim()
             vvalue = -10
-            domovoi_msg = "showing info for "
+            domovoi_msg = "の情報を表示"
         }
 
         // Common fixes to ghosts
@@ -234,6 +224,7 @@ function parse_speech(vtext){
             if(!$(document.getElementById(rev(all_ghosts,smallest_ghost))).isInViewport())
                 document.getElementById(rev(all_ghosts,smallest_ghost)).scrollIntoView({alignToTop:true,behavior:"smooth"})
             send_ghost_data_link(smallest_ghost)
+            domovoi_msg = smallest_ghost + domovoi_msg
         }
 
         resetResetButton()
@@ -241,32 +232,31 @@ function parse_speech(vtext){
         running_log[cur_idx]["Domo"] = domovoi_msg
         reset_voice_status()
     }
-    else if(vtext.startsWith('evidence')){
+    else if(vtext.startsWith('証拠')){
         document.getElementById("voice_recognition_status").className = null
         document.getElementById("voice_recognition_status").style.backgroundImage = "url(imgs/mic-recognized.png)"
         console.log("Recognized evidence command")
-        running_log[cur_idx]["Type"] = "evidence"
+        running_log[cur_idx]["Type"] = "証拠"
         console.log(`Heard '${vtext}'`)
-        vtext = vtext.replace('evidence', "").trim()
-        domovoi_msg += "marked evidence as "
+        vtext = vtext.replace('証拠', "").trim()
+        domovoi_msg += "証拠"
 
         var smallest_evidence = "emf 5"
         var smallest_val = 100
         var vvalue = 1
-        if(vtext.startsWith("not ") || vtext.startsWith("knot ") || vtext.startsWith("knight ")|| vtext.startsWith("night ")){
-            vtext = vtext.replace('knot ', "").replace('not ', "").replace('knight ', "").replace('night ', "").trim()
+        if(vtext.startsWith("ではない")){
+            vtext = vtext.replace('ではない', "").trim()
             vvalue = -1
-            domovoi_msg += "not "
+            domovoi_msg += "ではない"
         }
-        else if(vtext.startsWith("undo ") || vtext.startsWith("undue ") || vtext.startsWith("on do ") || vtext.startsWith("on due ") || vtext.startsWith("clear")){
-            vtext = vtext.replace('undo ', "").replace('undue ', "").replace("on do ","").replace("on due ","").replace("clear ","").trim()
+        else if(vtext.startsWith("クリア")){
+            vtext = vtext.replace('クリア', "").trim()
             vvalue = 0
-            domovoi_msg = "cleared "
+            domovoi_msg = "クリア"
         }
 
         // Common replacements for evidence names
         var prevtext = vtext;
-        vtext = vtext.replace("ghost ","").trim()
         for (const [key, value] of Object.entries(ZNLANG['evidence'])) {
             for (var i = 0; i < value.length; i++) {
                 if(vtext.startsWith(value[i])){vtext = key}
@@ -291,7 +281,7 @@ function parse_speech(vtext){
             }
         }
         else{
-            domovoi_msg = `Evidence ${smallest_evidence} is locked!`
+            domovoi_msg = `${smallest_evidence}がロックされる!`
         }
         
 
@@ -301,14 +291,14 @@ function parse_speech(vtext){
         reset_voice_status()
 
     }
-    else if(vtext.startsWith('monkey paw')){
+    else if(vtext.startsWith('猿の手')){
         document.getElementById("voice_recognition_status").className = null
         document.getElementById("voice_recognition_status").style.backgroundImage = "url(imgs/mic-recognized.png)"
         console.log("Recognized monkey paw command")
-        running_log[cur_idx]["Type"] = "monkey paw"
+        running_log[cur_idx]["Type"] = "猿の手"
         console.log(`Heard '${vtext}'`)
-        vtext = vtext.replace('monkey paw', "").trim()
-        domovoi_msg += "marked "
+        vtext = vtext.replace('猿の手', "").trim()
+        domovoi_msg += "猿の手の証拠として"
 
         var smallest_evidence = "emf 5"
         var smallest_val = 100
@@ -316,13 +306,11 @@ function parse_speech(vtext){
 
         // Common replacements for evidence names
         var prevtext = vtext;
-        vtext = vtext.replace("ghost ","").trim()
         for (const [key, value] of Object.entries(ZNLANG['evidence'])) {
             for (var i = 0; i < value.length; i++) {
                 if(vtext.startsWith(value[i])){vtext = key}
             }
         }
-
 
         for(var i = 0; i < Object.keys(all_evidence).length; i++){
             var leven_val = levenshtein_distance(Object.values(all_evidence)[i].toLowerCase(),vtext)
@@ -333,7 +321,7 @@ function parse_speech(vtext){
         }
         console.log(`${prevtext} >> ${vtext} >> ${smallest_evidence}`)
         running_log[cur_idx]["Debug"] = `${prevtext} >> ${vtext} >> ${smallest_evidence}`
-        domovoi_msg += `${smallest_evidence} as monkey paw evidence`
+        domovoi_msg += `${smallest_evidence}をマーク`
 
         monkeyPawFilter($(document.getElementById(rev(all_evidence,smallest_evidence))).parent().find(".monkey-paw-select"))
 
@@ -343,42 +331,45 @@ function parse_speech(vtext){
         reset_voice_status()
 
     }
-    else if(vtext.startsWith('speed') || vtext.startsWith('feed')){
+    else if(vtext.startsWith('速度')){
         document.getElementById("voice_recognition_status").className = null
         document.getElementById("voice_recognition_status").style.backgroundImage = "url(imgs/mic-recognized.png)"
         console.log("Recognized speed command")
-        running_log[cur_idx]["Type"] = "speed"
+        running_log[cur_idx]["Type"] = "速度"
         console.log(`Heard '${vtext}'`)
-        vtext = vtext.replace('speed', "").replace('feed', "").trim()
-        domovoi_msg += "marked speed "
+        vtext = vtext.replace('速度', "").trim()
+        domovoi_msg += "速度"
 
-        var smallest_speed = "normal"
+        var smallest_speed = "通常"
         var smallest_val = 100
         var vvalue = 1
-        if(vtext.startsWith("not ") || vtext.startsWith("knot ") || vtext.startsWith("knight ")|| vtext.startsWith("night ")){
-            vtext = vtext.replace('knot ', "").replace('not ', "").replace('knight ', "").replace('night ', "").trim()
+        if(vtext.startsWith("ではない")){
+            vtext = vtext.replace('ではない', "").trim()
             vvalue = 0
-            domovoi_msg += "not "
+            domovoi_msg += "ではない"
         }
-        else if(vtext.startsWith("undo ") || vtext.startsWith("undue ") || vtext.startsWith("on do ") || vtext.startsWith("on due ") || vtext.startsWith("clear")){
-            vtext = vtext.replace('undo ', "").replace('undue ', "").replace("on do ","").replace("on due ","").replace("clear ","").trim()
+        else if(vtext.startsWith("クリア")){
+            vtext = vtext.replace('クリア', "").trim()
             vvalue = -1
-            domovoi_msg = "cleared "
+            domovoi_msg = "クリア"
         }
 
-        vtext = vtext.replace("has ","")
-        if (vtext.startsWith("line of sight")){
+        if (vtext.startsWith("視認加速")){
             console.log(`${vtext} >> Line of Sight`)
             running_log[cur_idx]["Debug"] = `${vtext} >> Line of Sight`
 
+            vtext = vtext.replace("視認加速","")
+            if (vtext.startsWith("がない"))
+                vvalue = 0
+
             if((vvalue==0 && all_los()) || (vvalue==1 && all_not_los())){
-                domovoi_msg = `${vvalue == 0 ? 'All' : 'No'} current ghosts have LOS!`
+                domovoi_msg = `${vvalue == 0 ? '現在のゴーストはすべて速度 視認加速を持っている' : '現在のゴーストは速度 視認加速を持っていません'}`
             }
             else{
                 while (!$(document.getElementById("LOS").querySelector("#checkbox")).hasClass(["neutral","bad","good"][vvalue+1])){
                     tristate(document.getElementById("LOS"));
                 }
-                domovoi_msg = `${vvalue == -1 ? 'cleared' : vvalue == 0 ? 'marked not' : 'marked'} line of sight`
+                domovoi_msg = `速度 視認加速${vvalue == -1 ? 'クリア' : vvalue == 0 ? 'がない' : 'がある'}`
             }
         }
         else{
@@ -412,7 +403,7 @@ function parse_speech(vtext){
                 }
             }
             else{
-                domovoi_msg = `Speed ${smallest_speed} is locked!`
+                domovoi_msg = `${smallest_speed}がロックされる`
             }
         }
         
@@ -422,27 +413,27 @@ function parse_speech(vtext){
         reset_voice_status()
 
     }
-    else if(vtext.startsWith('hunt sanity') || vtext.startsWith('sanity')){
+    else if(vtext.startsWith('正気度')){
         document.getElementById("voice_recognition_status").className = null
         document.getElementById("voice_recognition_status").style.backgroundImage = "url(imgs/mic-recognized.png)"
         console.log("Recognized sanity command")
-        running_log[cur_idx]["Type"] = "sanity"
+        running_log[cur_idx]["Type"] = "正気度"
         console.log(`Heard '${vtext}'`)
-        vtext = vtext.replace('hunt sanity', "").replace('sanity', "").trim()
-        domovoi_msg += "marked hunt sanity "
+        vtext = vtext.replace('正気度', "").trim()
+        domovoi_msg += "正気度"
 
-        var smallest_sanity = "Late"
+        var smallest_sanity = "遅い"
         var smallest_val = 100
         var vvalue = 1
-        if(vtext.startsWith("not ") || vtext.startsWith("knot ") || vtext.startsWith("knight ")|| vtext.startsWith("night ")){
-            vtext = vtext.replace('knot ', "").replace('not ', "").replace('knight ', "").replace('night ', "").trim()
+        if(vtext.startsWith("ではない")){
+            vtext = vtext.replace('ではない', "").trim()
             vvalue = 0
-            domovoi_msg += "not "
+            domovoi_msg += "ではない"
         }
-        else if(vtext.startsWith("undo ") || vtext.startsWith("undue ") || vtext.startsWith("on do ") || vtext.startsWith("on due ") || vtext.startsWith("clear")){
-            vtext = vtext.replace('undo ', "").replace('undue ', "").replace("on do ","").replace("on due ","").replace("clear ","").trim()
+        else if(vtext.startsWith("クリア")){
+            vtext = vtext.replace('クリア', "").trim()
             vvalue = 0
-            domovoi_msg = "cleared "
+            domovoi_msg = "クリア"
         }
 
         // Common replacements for sanity
@@ -462,7 +453,7 @@ function parse_speech(vtext){
         }
         console.log(`${prevtext} >> ${vtext} >> ${smallest_sanity}`)
         running_log[cur_idx]["Debug"] = `${prevtext} >> ${vtext} >> ${smallest_sanity}`
-        domovoi_msg += smallest_sanity.replace("Average","Normal")
+        domovoi_msg += smallest_sanity.replace("Average","通常")
 
         if(!$(document.getElementById(rev(all_sanity,smallest_sanity)).querySelector("#checkbox")).hasClass("block")){
             while (vvalue != {"good":1,"neutral":0}[document.getElementById(rev(all_sanity,smallest_sanity)).querySelector("#checkbox").classList[0]]){
@@ -470,7 +461,7 @@ function parse_speech(vtext){
             }
         }
         else{
-            domovoi_msg = `Sanity ${smallest_sanity} is locked!`
+            domovoi_msg = `${smallest_sanity}がロックされる`
         }
 
         resetResetButton()
@@ -479,22 +470,22 @@ function parse_speech(vtext){
         reset_voice_status()
 
     }
-    else if(vtext.startsWith('timer')){
+    else if(vtext.startsWith('タイマー')){
         document.getElementById("voice_recognition_status").className = null
         document.getElementById("voice_recognition_status").style.backgroundImage = "url(imgs/mic-recognized.png)"
         console.log("Recognized timer command")
-        running_log[cur_idx]["Type"] = "timer"
+        running_log[cur_idx]["Type"] = "タイマー"
         console.log(`Heard '${vtext}'`)
-        vtext = vtext.replace('timer', "").trim()
+        vtext = vtext.replace('タイマー', "").trim()
         
 
-        if(vtext == "start"){
-            domovoi_msg += "started smudge timer"
+        if(vtext == "スタート"){
+            domovoi_msg += "スマッジ(浄化香)タイマーを開始する"
             toggle_timer(true,false)
             send_timer(true,false)
         } 
-        else{
-            domovoi_msg += "stopped smudge timer"
+        else if(vtext == "ストップ"){
+            domovoi_msg += "スマッジ(浄化香)タイマーを停止する"
             toggle_timer(false,true)
             send_timer(false,true)
         }
@@ -504,21 +495,21 @@ function parse_speech(vtext){
         running_log[cur_idx]["Domo"] = domovoi_msg
         reset_voice_status()
     }
-    else if(vtext.startsWith('cooldown') || vtext.startsWith('cool down')){
+    else if(vtext.startsWith('クールダウン')){
         document.getElementById("voice_recognition_status").className = null
         document.getElementById("voice_recognition_status").style.backgroundImage = "url(imgs/mic-recognized.png)"
         console.log("Recognized cooldown command")
-        running_log[cur_idx]["Type"] = "cooldown"
+        running_log[cur_idx]["Type"] = "クールダウン"
         console.log(`Heard '${vtext}'`)
-        vtext = vtext.replace('cooldown', "").replace('cool down', "").trim()
+        vtext = vtext.replace('クールダウン', "").trim()
         
-        if(vtext == "start"){
-            domovoi_msg += "started cooldown timer"
+        if(vtext == "スタート"){
+            domovoi_msg += "クールダウンタイマーを開始する"
             toggle_cooldown_timer(true,false)
             send_cooldown_timer(true,false)
         } 
-        else{
-            domovoi_msg += "stopped cooldown timer"
+        else if(vtext == "ストップ"){
+            domovoi_msg += "クールダウンタイマーを停止する"
             toggle_cooldown_timer(false,true)
             send_cooldown_timer(false,true)
         }
@@ -527,21 +518,21 @@ function parse_speech(vtext){
         running_log[cur_idx]["Domo"] = domovoi_msg
         reset_voice_status()
     }
-    else if(vtext.startsWith('hunt duration') || vtext.startsWith('hunt length')){
+    else if(vtext.startsWith('ハント時間')){
         document.getElementById("voice_recognition_status").className = null
         document.getElementById("voice_recognition_status").style.backgroundImage = "url(imgs/mic-recognized.png)"
         console.log("Recognized hunt duration set command")
-        running_log[cur_idx]["Type"] = "hunt duration set"
+        running_log[cur_idx]["Type"] = "ハント時間"
         console.log(`Heard '${vtext}'`)
-        vtext = vtext.replace('hunt duration ', "").replace('hunt length ', "").trim()
-        domovoi_msg += "set hunt duration to "
+        vtext = vtext.replace('ハント時間', "").trim()
+        domovoi_msg += "ハント時間を設定します： "
 
         if(document.getElementById("num_evidence").value == "-1"){
 
             var smallest_num = "3"
             var smallest_val = 100
             var prev_value = document.getElementById("cust_hunt_length").value
-            var all_hunt_length = ["short","low","medium","long","high"]
+            var all_hunt_length = ["短い","低","中","長","高"]
 
             for(var i = 0; i < all_hunt_length.length; i++){
                 var leven_val = levenshtein_distance(all_hunt_length[i],vtext)
@@ -552,7 +543,7 @@ function parse_speech(vtext){
             }
             domovoi_msg += smallest_num
 
-            smallest_num = {"short":"3A","low":"3A","medium":"3I","long":"3","high":"3"}[smallest_num]
+            smallest_num = {"短い":"3A","低":"3A","中":"3I","長":"3","高":"3"}[smallest_num]
             document.getElementById("cust_hunt_length").value = smallest_num
             if(prev_value != smallest_num){
                 filter()
@@ -561,26 +552,26 @@ function parse_speech(vtext){
             }
         }
         else{
-            domovoi_msg = "custom difficulty not selected"
+            domovoi_msg = "カスタム難易度が選択されていない"
         }
 
         domovoi_heard(domovoi_msg)
         running_log[cur_idx]["Domo"] = domovoi_msg
         reset_voice_status()
     }
-    else if(vtext.startsWith('number of evidence')){
+    else if(vtext.startsWith('証拠数')){
         document.getElementById("voice_recognition_status").className = null
         document.getElementById("voice_recognition_status").style.backgroundImage = "url(imgs/mic-recognized.png)"
         console.log("Recognized number of evidence set command")
-        running_log[cur_idx]["Type"] = "number of evidence set"
+        running_log[cur_idx]["Type"] = "証拠数"
         console.log(`Heard '${vtext}'`)
-        vtext = vtext.replace('number of evidence', "").trim()
-        domovoi_msg += "set # of evidence to "
+        vtext = vtext.replace('証拠数', "").trim()
+        domovoi_msg += "証拠数を設定する： "
 
-        vtext = vtext.replace('three','3')
-        vtext = vtext.replace('two','2').replace('to','2')
-        vtext = vtext.replace('one','1')
-        vtext = vtext.replace('zero','0')
+        vtext = vtext.replace('三','3')
+        vtext = vtext.replace('二','2')
+        vtext = vtext.replace('一','1')
+        vtext = vtext.replace('零','0')
 
         if(document.getElementById("num_evidence").value == "-1"){
 
@@ -606,28 +597,28 @@ function parse_speech(vtext){
             }
         }
         else{
-            domovoi_msg = "custom difficulty not selected"
+            domovoi_msg = "カスタム難易度が選択されていない"
         }
 
         domovoi_heard(domovoi_msg)
         running_log[cur_idx]["Domo"] = domovoi_msg
         reset_voice_status()
     }
-    else if(vtext.startsWith('hunt')){
+    else if(vtext.startsWith('ハント')){
         document.getElementById("voice_recognition_status").className = null
         document.getElementById("voice_recognition_status").style.backgroundImage = "url(imgs/mic-recognized.png)"
         console.log("Recognized hunt command")
-        running_log[cur_idx]["Type"] = "hunt"
+        running_log[cur_idx]["Type"] = "ハント"
         console.log(`Heard '${vtext}'`)
-        vtext = vtext.replace('hunt', "").trim()
+        vtext = vtext.replace('ハント', "").trim()
 
-        if(vtext == "start"){
-            domovoi_msg += "started hunt timer"
+        if(vtext == "スタート"){
+            domovoi_msg += "ハントタイマーを開始する"
             toggle_hunt_timer(true,false)
             send_hunt_timer(true,false)
         } 
-        else{
-            domovoi_msg += "stopped hunt timer"
+        else if(vtext == "ストップ"){
+            domovoi_msg += "ハントタイマーを停止する"
             toggle_hunt_timer(false,true)
             send_hunt_timer(false,true)
         }
@@ -636,19 +627,19 @@ function parse_speech(vtext){
         running_log[cur_idx]["Domo"] = domovoi_msg
         reset_voice_status()
     }
-    else if(vtext.startsWith('difficulty')){
+    else if(vtext.startsWith('難易度')){
         document.getElementById("voice_recognition_status").className = null
         document.getElementById("voice_recognition_status").style.backgroundImage = "url(imgs/mic-recognized.png)"
         console.log("Recognized evidence set command")
-        running_log[cur_idx]["Type"] = "evidence set"
+        running_log[cur_idx]["Type"] = "難易度"
         console.log(`Heard '${vtext}'`)
-        vtext = vtext.replace('difficulty', "").trim()
-        domovoi_msg += "set difficulty to "
+        vtext = vtext.replace('難易度', "").trim()
+        domovoi_msg += "難易度: "
 
         var smallest_num = "3"
         var smallest_val = 100
         var prev_value = document.getElementById("num_evidence").value
-        var all_difficulty = ["custom","apocolypse","insanity","nightmare","professional","intermediate","amateur"]
+        var all_difficulty = ["カスタム","アポカリプス","インサニティ","ナイトメア","プロ","セミプロ","アマチュア"]
 
         for(var i = 0; i < all_difficulty.length; i++){
             var leven_val = levenshtein_distance(all_difficulty[i],vtext)
@@ -659,7 +650,7 @@ function parse_speech(vtext){
         }
         domovoi_msg += smallest_num
 
-        smallest_num = {"custom":"-1","apocolypse":"0","insanity":"1","nightmare":"2","professional":"3","intermediate":"3I","amateur":"3A"}[smallest_num]
+        smallest_num = {"カスタム":"-1","アポカリプス":"0","インサニティ":"1","ナイトメア":"2","プロ":"3","セミプロ":"3I","アマチュア":"3A"}[smallest_num]
         document.getElementById("num_evidence").value =  smallest_num
         if(prev_value != smallest_num){
             filter()
@@ -674,26 +665,26 @@ function parse_speech(vtext){
         running_log[cur_idx]["Domo"] = domovoi_msg
         reset_voice_status()
     }
-    else if(vtext.startsWith('show tools') || vtext.startsWith('show filters')){
+    else if(vtext.startsWith('表示 ツール') || vtext.startsWith('表示 フィルター')){
         document.getElementById("voice_recognition_status").className = null
         document.getElementById("voice_recognition_status").style.backgroundImage = "url(imgs/mic-recognized.png)"
         console.log("Recognized filter/tool command")
-        running_log[cur_idx]["Type"] = "filter/tool"
+        running_log[cur_idx]["Type"] = "ツール'/フィルター"
         console.log(`Heard '${vtext}'`)
-        domovoi_msg += "toggled menu"
+        domovoi_msg += "トグル式メニュー"
         toggleFilterTools()
         domovoi_heard(domovoi_msg)
         running_log[cur_idx]["Domo"] = domovoi_msg
         reset_voice_status()
     }
-    else if(vtext.startsWith('show maps') || vtext.startsWith('show map')){
+    else if(vtext.startsWith('表示 マップ')){
         document.getElementById("voice_recognition_status").className = null
         document.getElementById("voice_recognition_status").style.backgroundImage = "url(imgs/mic-recognized.png)"
         console.log("Recognized map command")
-        running_log[cur_idx]["Type"] = "maps"
+        running_log[cur_idx]["Type"] = "表示 マップ"
         console.log(`Heard '${vtext}'`)
-        vtext = vtext.replace('show maps', "").replace('show map', "").replace('select map', "").trim()
-        domovoi_msg = "showing map"
+        vtext = vtext.replace('表示 マップ', "").trim()
+        domovoi_msg = "表示 マップ: "
 
         var smallest_map = "tanglewood"
         var smallest_val = 100
@@ -723,14 +714,14 @@ function parse_speech(vtext){
         running_log[cur_idx]["Domo"] = domovoi_msg
         reset_voice_status()
     }
-    else if(vtext.startsWith('select map')){
+    else if(vtext.startsWith('選択 マップ')){
         document.getElementById("voice_recognition_status").className = null
         document.getElementById("voice_recognition_status").style.backgroundImage = "url(imgs/mic-recognized.png)"
         console.log("Recognized map command")
-        running_log[cur_idx]["Type"] = "maps"
+        running_log[cur_idx]["Type"] = "選択 マップ"
         console.log(`Heard '${vtext}'`)
-        vtext = vtext.replace('show maps', "").replace('show map', "").replace('select map', "").trim()
-        domovoi_msg = "selecting map"
+        vtext = vtext.replace('選択 マップ', "").trim()
+        domovoi_msg = "選択 マップ:"
 
         var smallest_map = "tanglewood"
         var smallest_val = 100
@@ -765,13 +756,13 @@ function parse_speech(vtext){
         running_log[cur_idx]["Domo"] = domovoi_msg
         reset_voice_status()
     }
-    else if(vtext.startsWith('close maps') || vtext.startsWith('close map') || vtext.startsWith('hide maps') || vtext.startsWith('hide map')){
+    else if(vtext.startsWith('クローズ マップ') || vtext.startsWith('非表示 マップ')){
         document.getElementById("voice_recognition_status").className = null
         document.getElementById("voice_recognition_status").style.backgroundImage = "url(imgs/mic-recognized.png)"
         console.log("Recognized map command")
         running_log[cur_idx]["Type"] = "maps"
         console.log(`Heard '${vtext}'`)
-        domovoi_msg = "closing map"
+        domovoi_msg = "クローズ マップ"
 
         showMaps(false, true)
 
@@ -779,14 +770,14 @@ function parse_speech(vtext){
         running_log[cur_idx]["Domo"] = domovoi_msg
         reset_voice_status()
     }
-    else if(vtext.startsWith('reset cheat sheet') || vtext.startsWith('reset journal')){
+    else if(vtext.startsWith('リセット ジャーナル') || vtext.startsWith('リセット チートシート')){
         document.getElementById("voice_recognition_status").className = null
         document.getElementById("voice_recognition_status").style.backgroundImage = "url(imgs/mic-recognized.png)"
         console.log("Recognized reset command")
         console.log(`Heard '${vtext}'`)
         reset()
     }
-    else if(vtext.startsWith('stop listening')){
+    else if(vtext.startsWith('ストップ 入力')){
         document.getElementById("voice_recognition_status").className = null
         document.getElementById("voice_recognition_status").style.backgroundImage = "url(imgs/mic-recognized.png)"
         console.log("Recognized stop listening command")
@@ -794,15 +785,9 @@ function parse_speech(vtext){
         stop_voice()
     }
     else if(
-        vtext.startsWith("hello domo") || vtext.startsWith("hello domovoi")|| vtext.startsWith("hello zero") ||
-        vtext.startsWith("hi domo") || vtext.startsWith("hi domovoi")|| vtext.startsWith("hi zero")
+        vtext.startsWith("こんにちは")
     ){
-        if(Object.keys(discord_user).length > 0){
-            domovoi_heard(`hello ${discord_user['username']}!`)
-        }
-        else{
-            domovoi_heard("hello!")
-        }
+        domovoi_heard("こんにちは！")
         
         reset_voice_status()
     }
@@ -838,7 +823,7 @@ if (("webkitSpeechRecognition" in window || "speechRecognition" in window) && !n
   
     speechRecognition.continuous = false;
     speechRecognition.interimResults = false;
-    speechRecognition.lang = 'en-US';
+    speechRecognition.lang = 'ja';
   
     speechRecognition.onend = () => {
         if(!stop_listen){
@@ -898,7 +883,7 @@ if (("webkitSpeechRecognition" in window || "speechRecognition" in window) && !n
     document.getElementById("stop_voice").disabled = true
     document.getElementById("start_voice").style.display = "none"
     document.getElementById("stop_voice").style.display = "none"
-    document.getElementById("voice_recognition_note").innerHTML = "Browser not supported"
+    document.getElementById("voice_recognition_note").innerHTML = "非サポートされたブラウザー"
     console.log("Speech Recognition Not Available");
   }
 

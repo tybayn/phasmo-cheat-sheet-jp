@@ -606,7 +606,7 @@
         cursor: pointer;
         width: 50%;
         margin-bottom: 10px;
-        font-family: 'Yahfie';
+        font-family: 'JKG-L';
         font-size: 45px;
     }
 
@@ -738,7 +738,7 @@
         font-size: 35px;
         padding: 2px 10px;
         margin: 2px 10px;
-        font-family: 'Yahfie';
+        font-family: 'JKG-L';
         width: 33%;
         position: absolute;
         right: 0;
@@ -759,7 +759,7 @@
         height: 45px;
         font-size: 35px;
         padding: 2px 10px;
-        font-family: 'Yahfie';
+        font-family: 'JKG-L';
         width: calc(50% - 5px) !important;
     }
 
@@ -1644,7 +1644,7 @@
     .ghost_name{
         grid-column: 1;
         grid-row: 1;
-        font-family:"October Crow";
+        font-family:"Onryou";
         font-size: 30px;
         font-weight: bold;
         padding: 10px 0px 10px 10px;
@@ -1814,7 +1814,7 @@
         margin: 10px 0px;
         cursor: pointer;
         font-size: 30px;
-        font-family: "Yahfie";
+        font-family: "JKG-L";
         display: grid;
         justify-content: start;
         letter-spacing: 3px;

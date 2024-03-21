@@ -1,17 +1,17 @@
 const themes = {
-    "Default": "theme-default",
-    "Berry": "theme-berry",
-    "Black & White": "theme-black-white",
-    "Dusk": "theme-dusk",
-    "Frost": "theme-frost",
-    "Halloween": "theme-halloween",
-    "Northern Lights": "theme-northern-lights",
-    "Pride": "theme-pride",
-    "Spruce": "theme-spruce",
-    "Steel": "theme-steel",
-    "Sunset": "theme-sunset",
-    "Twilight": "theme-twilight",
-    "ZN-Elite" : "theme-zn"
+    "デフォルト": "theme-default",
+    "ベリー": "theme-berry",
+    "白黒": "theme-black-white",
+    "夕暮れ": "theme-dusk",
+    "霜": "theme-frost",
+    "ハロウィン": "theme-halloween",
+    "オーロラ": "theme-northern-lights",
+    "プライド": "theme-pride",
+    "スプルース": "theme-spruce",
+    "鋼": "theme-steel",
+    "日暮れ": "theme-sunset",
+    "黄昏": "theme-twilight",
+    "ZN-エリート" : "theme-zn"
 }
 
 function loadThemes(){

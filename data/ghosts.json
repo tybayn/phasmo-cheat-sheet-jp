@@ -642,11 +642,11 @@
     "version": "v0.9.5.0",
     "evidence": {
         "EMF 5":"EMF 5",
-        "紫外線":"Ultraviolet",
-        "ゴーストライティング":"Writing",
-        "氷点下":"Freezing",
+        "Ultraviolet":"紫外線",
+        "Writing":"ゴーストライティング",
+        "Freezing":"氷点下",
         "DOTs":"DOTs",
-        "ゴーストオーブ":"Ghost Orbs",
-        "スピリットボックス":"Spirit Box"
+        "Ghost Orbs":"ゴーストオーブ",
+        "Spirit Box":"スピリットボックス"
     }
 }

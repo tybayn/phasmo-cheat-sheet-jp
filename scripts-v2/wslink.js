@@ -4,7 +4,7 @@ let dlws = null
 var ws_ping;
 var dlws_ping;
 var await_dlws_pong = false
-const lang = "en"
+const lang = "jp"
 
 function auto_link(){
     var room_id = getCookie("room_id")
@@ -93,14 +93,14 @@ function link_room(){
         $("#room_id_create").hide()
         $("#room_id_link").hide()
         $("#room_id_disconnect").show()
-        document.getElementById("room_id_note").innerText = "STATUS: Connected"
+        document.getElementById("room_id_note").innerText = "STATUS: 接続された"
         document.getElementById("settings_status").className = "connected"
         ws_ping = setInterval(function(){
             send_ping()
         }, 30000)
     }
     ws.onerror = function(event){
-        document.getElementById("room_id_note").innerText = "ERROR: Could not connect!"
+        document.getElementById("room_id_note").innerText = "ERROR: 接続できませんでした"
         document.getElementById("settings_status").className = "error"
         setCookie("room_id","",-1)
     }
@@ -109,6 +109,7 @@ function link_room(){
             
             document.getElementById("settings_status").className = "connected"
             if(event.data == "-"){
+                state_received = true
                 return
             }
             var incoming_state = JSON.parse(event.data)
@@ -142,26 +143,26 @@ function link_room(){
                     }
                 }
                 if (incoming_state['action'].toUpperCase() == "CHANGE"){
-                    document.getElementById("room_id_note").innerText = `STATUS: Connected (${incoming_state['players']})`
+                    document.getElementById("room_id_note").innerText = `STATUS: 接続された (${incoming_state['players']})`
                 }
                 if (incoming_state['action'].toUpperCase() == "POLL"){
                     polled = true
                     if(Object.keys(discord_user).length > 0){
                         if (hasSelected()){
                             ws.send('{"action":"READY"}')
-                            $("#reset").html("Waiting for others...")
+                            $("#reset").html("他プレイヤーを待機中。。。")
                         }
                         else{
                             $("#reset").removeClass("standard_reset")
                             $("#reset").addClass("reset_pulse")
-                            $("#reset").html("No ghost selected!<div class='reset_note'>(double click to save & reset)</div>")
+                            $("#reset").html("ゴースト未選択!<div class='reset_note'>(ダブルクリックで保存&リセット)</div>")
                             $("#reset").attr("onclick",null)
                             $("#reset").attr("ondblclick","reset()")
                         }
                     }
                     else{
                         ws.send('{"action":"READY"}')
-                        $("#reset").html("Waiting for others...")
+                        $("#reset").html("他プレイヤーを待機中。。。")
                     }
                 }
                 return
@@ -303,11 +304,11 @@ function link_link(){
         hasDLLink = true;
         $("#link_id_create").hide()
         $("#link_id_disconnect").show()
-        document.getElementById("link_id_note").innerText = "STATUS: Awaiting Desktop Link"
+        document.getElementById("link_id_note").innerText = "STATUS: デスクトップリンク待機中"
         document.getElementById("dllink_status").className = "pending"
     }
     dlws.onerror = function(event){
-        document.getElementById("link_id_note").innerText = "ERROR: Could not connect!"
+        document.getElementById("link_id_note").innerText = "ERROR: 接続できませんでした"
         document.getElementById("dllink_status").className = "error"
         setCookie("link_id","",-1)
     }
@@ -341,7 +342,7 @@ function link_link(){
                     send_hunt_timer(force_start)
                 }
                 if (incoming_state['action'].toUpperCase() == "LINKED"){
-                    document.getElementById("link_id_note").innerText = `STATUS: Linked`
+                    document.getElementById("link_id_note").innerText = `STATUS: リンクされた`
                     document.getElementById("dllink_status").className = "connected"
                     dlws.send('{"action":"LINK"}')
                     send_timer_link("TIMER_VAL","0:00")
@@ -356,7 +357,7 @@ function link_link(){
                             dlws.send('{"action":"PINGKILL"}')
                             $("#link_id_create").show()
                             $("#link_id_disconnect").hide()
-                            document.getElementById("link_id_note").innerText = "ERROR: Link Lost Connection!"
+                            document.getElementById("link_id_note").innerText = "ERROR: リンクの接続が切れました!"
                             document.getElementById("dllink_status").className = "error"
                             document.getElementById("link_id").value = ""
                             setCookie("link_id","",-1)
@@ -369,7 +370,7 @@ function link_link(){
                         }
                     }, 30000)
                 }
-                if (incoming_state['action'].toUpperCase() == "UNLINKED"){
+                if (incoming_state['action'].toUpperCase() == "UNLINK"){
                     disconnect_link()
                 }
                 if (incoming_state['action'].toUpperCase() == "DL_STEP"){
@@ -417,9 +418,9 @@ function link_link(){
 
 function continue_session(){
     if(hasLink){
-        ws.send('{"action":"READY"}')
+        ws.send('{"action":"REQUEST_RESET"}')
         polled = true
-        $("#reset").html("Waiting for others...")
+        $("#reset").html("他プレイヤーを待機中。。。")
         return false
     }
     return true
@@ -433,7 +434,7 @@ function disconnect_room(reset=false,has_status=false){
         $("#room_id_link").show()
         $("#room_id_disconnect").hide()
         if(!has_status){
-            document.getElementById("room_id_note").innerText = "STATUS: Not connected"
+            document.getElementById("room_id_note").innerText = "STATUS: 未接続"
             document.getElementById("settings_status").className = null
             document.getElementById("room_id").value = ""
         }

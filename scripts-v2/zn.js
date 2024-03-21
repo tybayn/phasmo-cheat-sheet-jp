@@ -26,14 +26,14 @@ function heartbeat(){
         fetch("https://zero-network.net/zn/"+znid,{method:"POST",Accept:"application/json",body:JSON.stringify(state),signal: AbortSignal.timeout(10000)})
         .then(response => response.json())
         .then(data => {
-            $("#active-users-label").text("Active Users: " + data['active_num_users'])
+            $("#active-users-label").text("現在アクセス中ユーザー: " + data['active_num_users'])
         })
         .catch(response => {
-            $("#active-users-label").text("Active Users: -")
+            $("#active-users-label").text("現在アクセス中ユーザー: -")
         });
     }
     else {
-        $("#active-users-label").text("Active Users: -")
+        $("#active-users-label").text("現在アクセス中ユーザー: -")
     }
 }
 

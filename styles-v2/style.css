@@ -1,11 +1,11 @@
 @font-face {
-    font-family: 'October Crow';
-    src: url('fonts/october_crow.ttf');
+    font-family: 'Onryou';
+    src: url('fonts/onryou.ttf');
 }
 
 @font-face {
-    font-family: 'Yahfie';
-    src: url('fonts/yahfie.ttf');
+    font-family: 'JKG-L';
+    src: url('fonts/JKG-L.ttf');
 }
 
 ::-webkit-scrollbar {
@@ -30,7 +30,7 @@ body{
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'JKG-L';
 }
 
 hr{
@@ -39,18 +39,51 @@ hr{
     width: 90%;
 }
 
+#incompatible{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #313248;
+    z-index: 20;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 60px;
+}
+
+#incompatible img{
+    margin-bottom: 50px;
+}
+
+#incompatible .inc-data{
+    padding: 0px 50px;
+    text-align: center;
+}
+
+#incompatible .inc-copyright{
+    font-size: 30px;
+    color: #CCC;
+    text-align: center;
+    margin-top: 150px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
 .title{
     font-size: 30px;
     padding-top: 20px;
 }
 
 .phasfont{
-    font-family:"October Crow";
+    font-family:"Onryou";
     letter-spacing: 1;
 }
 
 .yfont{
-    font-family:"Yahfie";
+    font-family:"JKG-L";
 }
 
 .white{
@@ -88,7 +121,7 @@ hr{
         align-items: flex-start;
         color: #fff;
         padding: 5px 8px 5px 20px;
-        font-size: 14px;
+        font-size: 12px;
         transition: left 0.5s ease;
     }
 
@@ -206,7 +239,7 @@ hr{
         align-items: flex-start;
         color: #fff;
         padding: 5px 8px 5px 20px;
-        font-size: 14px;
+        font-size: 12px;
         transition: left 0.5s ease;
     }
 
@@ -217,7 +250,7 @@ hr{
         align-items: center;
         flex-direction: column;
         width: 15px;
-        height: 90px;
+        height: 125px;
         text-align: center;
         top: 114px;
         right: -26px;
@@ -244,7 +277,7 @@ hr{
         align-items: flex-start;
         color: #fff;
         padding: 5px 8px 5px 20px;
-        font-size: 14px;
+        font-size: 12px;
         transition: left 0.5s ease;
     }
 
@@ -257,7 +290,7 @@ hr{
         width: 15px;
         height: 90px;
         text-align: center;
-        top: 222px;
+        top: 257px;
         right: -26px;
         background-color: #313248;
         padding: 5px;
@@ -295,7 +328,7 @@ hr{
         align-items: flex-start;
         color: #fff;
         padding: 5px 8px 5px 20px;
-        font-size: 14px;
+        font-size: 12px;
         transition: left 0.5s ease, width 0.5s ease;
     }
 
@@ -308,7 +341,7 @@ hr{
         width: 15px;
         height: 90px;
         text-align: center;
-        top: 330px;
+        top: 365px;
         right: -26px;
         background-color: #313248;
         padding: 5px;
@@ -403,8 +436,8 @@ hr{
     }
 
     .settings_title{
-        font-size: 26px;
-        margin: 2px 0px 10px 0px;
+        font-size: 20px;
+        margin: 5px 0px 5px 0px;
     }
 
     #settings_box .icon, #discord_link_box .icon, #event_box .icon, #wiki_box .icon, #maps_box .icon, #news_box .icon, #language_box .icon, #theme_box .icon{
@@ -491,7 +524,7 @@ hr{
     }
 
     #offset_value{
-        font-size: 20px;
+        font-size: 19px;
     }
 
     .speed_icon{
@@ -723,7 +756,7 @@ hr{
         width: 100%;
         height: 100%;
         display: grid;
-        grid-template-columns: 180px auto;
+        grid-template-columns: 220px auto;
     }
 
     .menu{
@@ -751,8 +784,8 @@ hr{
         cursor: pointer;
         width: 50%;
         margin-bottom: 10px;
-        font-family: 'Yahfie';
-        font-size: 21px;
+        font-family: 'JKG-L';
+        font-size: 14px;
     }
 
     .filter_tool_button_live{
@@ -823,16 +856,18 @@ hr{
     .timer_title{
         grid-column: 1;
         grid-row: 1;
-        font-size: 26px;
+        font-size: 19px;
         z-index: 2;
+        margin-top: 8px;
+
     }
 
     .modifier_title{
         grid-column: 1;
         grid-row: 3;
-        font-size: 26px;
+        font-size: 19px;
         z-index: 2;
-        margin-top: 8px;
+        margin-top: 17px;
     }
 
     .timers{
@@ -870,13 +905,13 @@ hr{
     }
 
     .modifier_ghost_speed, .modifier_bpm_finder{
-        font-size: 18px;
+        font-size: 11px;
         letter-spacing: 1px;
-        padding: 10px 10px 0px 10px;
+        padding: 10px 10px 3px 10px;
     }
 
     .modifier_smudge_timer{
-        font-size: 16px;
+        font-size: 11px;
         letter-spacing: 1px;
         text-align: center;
         display: flex;
@@ -929,9 +964,9 @@ hr{
     }
 
     .modifier_note_3{
-        color: #a9a9a9a0;
-        font-size: 8px;
-        padding: 2px;
+        color: #a9a9a9d4;
+        font-size: 11px;
+        padding: 6px;
     }
 
     .timer_div{
@@ -960,7 +995,7 @@ hr{
     .evidence_title{
         grid-column: 1;
         grid-row: 1;
-        font-size: 26px;
+        font-size: 19px;
         z-index: 2;
     }
 
@@ -973,10 +1008,10 @@ hr{
         background: rgba(0,0,0,0.25);
         box-shadow: inset 0 0 10px #161615;
         height: 25px;
-        font-size: 16px;
+        font-size: 14px;
         padding: 0px 3px;
         padding-top: 1px;
-        font-family: 'Yahfie';
+        font-family: 'JKG-L';
         float: right;
         cursor: pointer;
     }
@@ -1039,9 +1074,9 @@ hr{
     .speed_title{
         grid-column: 1;
         grid-row: 3;
-        font-size: 26px;
+        font-size: 19px;
         z-index: 2;
-        margin-top: 8px;
+        margin-top: 12px;
     }
 
     .speed{
@@ -1063,9 +1098,9 @@ hr{
     .hunt_sanity_title{
         grid-column: 1;
         grid-row: 5;
-        font-size: 26px;
+        font-size: 19px;
         z-index: 2;
-        margin-top: 8px;
+        margin-top: 12px;
     }
 
     .hunt_sanity{
@@ -1248,7 +1283,7 @@ hr{
     #time_left{
         color: #fff;
         width: calc(100% - 20px);
-        font-size: 12px;
+        font-size: 10px;
         text-align: end;
         position: relative;
         padding: 0px 10px;
@@ -1319,7 +1354,7 @@ hr{
     }
 
     .spirit_line_label{
-        color: rgb(145, 145, 145);
+        color: rgb(185, 185, 185);
         font-size: 10px;
         display: inline-block;
         left: 13px;
@@ -1328,7 +1363,7 @@ hr{
     }
 
     .demon_line_label{
-        color: rgb(145, 145, 145);
+        color: rgb(185, 185, 185);
         font-size: 10px;
         display: inline-block;
         left: 74.666%;
@@ -1339,7 +1374,7 @@ hr{
     #time_left_cooldown{
         color: #fff;
         width: calc(100% - 20px);
-        font-size: 12px;
+        font-size: 10px;
         text-align: end;
         position: relative;
         padding: 0px 10px;
@@ -1392,7 +1427,7 @@ hr{
     }
 
     .cooldown_demon_line_label{
-        color: rgb(145, 145, 145);
+        color: rgb(185, 185, 185);
         font-size: 10px;
         display: inline-block;
         left: 29%;
@@ -1403,7 +1438,7 @@ hr{
     #time_left_hunt{
         color: #fff;
         width: calc(100% - 20px);
-        font-size: 12px;
+        font-size: 10px;
         text-align: end;
         position: relative;
         padding: 0px 10px;
@@ -1456,7 +1491,7 @@ hr{
     }
 
     .hunt_cursed_line_label{
-        color: rgb(145, 145, 145);
+        color: rgb(185, 185, 185);
         font-size: 10px;
         display: inline-block;
         left: 12px;
@@ -1465,7 +1500,7 @@ hr{
     }
 
     .hunt_size_label{
-        color: rgb(145, 145, 145);
+        color: rgb(185, 185, 185);
         font-size: 10px;
         display: inline-block;
         right: -12px;
@@ -1475,7 +1510,7 @@ hr{
     }
 
     #tap{
-        font-size: 18px;
+        font-size: 17px;
         color: #ccc;
         border: 2px solid #ccc;
         background: none;
@@ -1518,7 +1553,7 @@ hr{
     .tap_note{
         color: #ffffffa0;
         font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        font-size: 9px;
+        font-size: 10px;
     }
 
     #input_bpm, #input_speed{
@@ -1544,7 +1579,7 @@ hr{
     }
 
     .modifier_volume{
-        font-size: 18px;
+        font-size: 14px;
         letter-spacing: 1px;
         padding: 10px 5px 0px 5px;
         position: relative;
@@ -1626,9 +1661,9 @@ hr{
     }
 
     .active_title,.maps_title,.info_title{
-        font-size: 24px;
-        height:24px;
-        padding: 10px;
+        font-size: 20px;
+        height: 24px;
+        padding: 5px;
     }
 
     .maps_image{
@@ -1775,7 +1810,7 @@ hr{
         grid-row: 3;
         width: 100%;
         justify-self: center;
-        font-size: 20px;
+        font-size: 19px;
         color: #ccc;
         border: 2px solid #ccc;
         background: none;
@@ -1811,7 +1846,7 @@ hr{
         max-width: 510px;
         min-width: 470px;
         border-radius: 5px;
-        grid-template-columns: 245px auto;
+        grid-template-columns: 260px auto;
         grid-template-rows: 45px 35px 45px;
         color: white;
         background-color: #313248;
@@ -1825,7 +1860,7 @@ hr{
     .ghost_name{
         grid-column: 1;
         grid-row: 1;
-        font-family:"October Crow";
+        font-family:"Onryou";
         font-size: 24px;
         font-weight: bold;
         padding:10px 10px 0px 10px;
@@ -1837,7 +1872,7 @@ hr{
     .ghost_evidence{
         grid-column: 1;
         grid-row: 2;
-        font-size: 12px;
+        font-size: 11px;
         text-align: center;
         display: flex;
         justify-content: space-around;
@@ -1846,6 +1881,8 @@ hr{
 
     .ghost_evidence_item{
         height: fit-content;
+        min-width: 65px;
+        max-width: 80px;
         padding: 2px 3px;
         margin: -2px;
         display: flex;
@@ -1871,7 +1908,7 @@ hr{
     }
     
     .ghost_speed{
-        font-size: 14px;
+        font-size: 12px;
         text-align: center;
         display: flex;
         align-items: center;
@@ -1899,7 +1936,7 @@ hr{
     }
 
     .ghost_hunt{
-        font-size: 14px;
+        font-size: 12px;
         text-align: center;
         display: flex;
         align-items: center;
@@ -2030,8 +2067,8 @@ input{
         position: relative;
         margin: 4px 0px;
         cursor: pointer;
-        font-size: 18px;
-        font-family: "Yahfie";
+        font-size: 14px;
+        font-family: "JKG-L";
         letter-spacing: 1.5;
         display: grid;
         justify-content: start;
@@ -2291,8 +2328,8 @@ input{
     }
 
     #domovoi-text{
-        font-family: "Yahfie";
-        font-size: 16px;
+        font-family: "JKG-L";
+        font-size: 14px;
         letter-spacing: 2;
         font-weight: bold;
         border-radius: 20px;

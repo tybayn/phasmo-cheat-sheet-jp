@@ -15,7 +15,7 @@ function accordian(elem){
 
 // -----------------------------------------------
 let ghost_flicker_data = {
-    "Normal":{
+    "通常":{
         "vis_max":0.30,
         "vis_min":0.08,
         "invis_max":0.92,
@@ -23,7 +23,7 @@ let ghost_flicker_data = {
         "flicker_max":1.00,
         "flicker_min":0.30
     },
-    "Phantom":{
+    "ファントム":{
         "vis_max":0.30,
         "vis_min":0.08,
         "invis_max":1.92,
@@ -31,7 +31,7 @@ let ghost_flicker_data = {
         "flicker_max":2.00,
         "flicker_min":1.00
     },
-    "Oni":{
+    "鬼":{
         "vis_max":0.50,
         "vis_min":0.02,
         "invis_max":0.50,
@@ -39,7 +39,7 @@ let ghost_flicker_data = {
         "flicker_max":1.00,
         "flicker_min":0.30
     },
-    "Deogen":{
+    "デオヘン":{
         "vis_max":0.30,
         "vis_min":0.20,
         "invis_max":0.40,

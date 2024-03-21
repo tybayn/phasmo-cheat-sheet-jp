@@ -1,6 +1,6 @@
-# Unofficial Phasmo Cheat Sheet (template)
+# Unofficial Phasmo Cheat Sheet (Japanese Translation)
 
-A client facing web-app guide for the horror video game Phasmophobia. This repo is intended to be forked and translated into other languages.
+A client facing web-app guide for the horror video game Phasmophobia. This repo has been translated from English to Japanese by dokuji72.
 
 In order to make this version work with other languages, the following features from the original have been removed:
 - Discord Link
@@ -27,4 +27,5 @@ NOTE: By using this code, you agree to not use any included, external URLs prese
 
 With the exception of:  
 JQuery - MIT License  
-October Crow Font - Custom License
+Onryou Font - Custom License, Free for Commercial Use: https://www.freejapanesefont.com/onryou-horror-font-%e6%80%a8%e9%9c%8a/
+JKG-L Font - Custom License, Free for Commercial Use: https://www.freejapanesefont.com/jk-gothic-l-download/
