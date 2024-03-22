@@ -27,5 +27,5 @@ NOTE: By using this code, you agree to not use any included, external URLs prese
 
 With the exception of:  
 JQuery - MIT License  
-Onryou Font - Custom License, Free for Commercial Use: https://www.freejapanesefont.com/onryou-horror-font-%e6%80%a8%e9%9c%8a/
+Minamoji Font - Free Version - Custom License, Free for Commercial Use: https://booth.pm/ja/items/2451474
 JKG-L Font - Custom License, Free for Commercial Use: https://www.freejapanesefont.com/jk-gothic-l-download/

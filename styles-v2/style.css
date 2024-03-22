@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'Onryou';
-    src: url('fonts/onryou.ttf');
+    font-family: 'Minamoji';
+    src: url('fonts/minamoji04.ttf');
 }
 
 @font-face {
@@ -78,7 +78,7 @@ hr{
 }
 
 .phasfont{
-    font-family:"Onryou";
+    font-family:"Minamoji";
     letter-spacing: 1;
 }
 
@@ -1860,9 +1860,9 @@ hr{
     .ghost_name{
         grid-column: 1;
         grid-row: 1;
-        font-family:"Onryou";
+        font-family:"Minamoji";
         font-size: 24px;
-        font-weight: bold;
+        font-weight: normal;
         padding:10px 10px 0px 10px;
         text-align: center;
         letter-spacing: 2px;
