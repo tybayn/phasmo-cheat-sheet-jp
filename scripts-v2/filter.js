@@ -1210,7 +1210,7 @@ function showTheme(){
 function flashMode(){
     var cur_evidence = document.getElementById("num_evidence").value
     var mode_text = {"-1":"カスタム","0":"アポカリプス III","1":"インサニティ","2":"ナイトメア","3":"プロ","3I":"セミプロ","3A":"アマチュア"}[cur_evidence]
-    document.getElementById("game_mode").innerHTML = `${mode_text}<span>(${parseInt(cur_evidence)} タイマー)</span>`.replace("-1",document.getElementById("cust_num_evidence").value)
+    document.getElementById("game_mode").innerHTML = `${mode_text}<span>(${parseInt(cur_evidence)} 証拠)</span>`.replace("-1",document.getElementById("cust_num_evidence").value)
     $("#game_mode").fadeIn(500,function () {
         $("#game_mode").delay(500).fadeOut(500);
       });
