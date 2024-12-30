@@ -115,8 +115,8 @@
                 <ul>
                     <li>"タイマー スタート" -> スマッジ(浄化香)タイマーを開始する</li>
                     <li>"タイマー ストップ" -> スマッジ(浄化香)タイマーを停止する</li>
-                    <li>"クールダウン スタート" -> クールダウンタイマーを開始する</li>
-                    <li>"クールダウン ストップ" -> クールダウンタイマーを停止する</li>
+                    <li>"クールタイム スタート" -> クールタイムタイマーを開始する</li>
+                    <li>"クールタイム ストップ" -> クールタイムタイマーを停止する</li>
                     <li>"ハント スタート" -> ハントタイマーを開始する</li>
                     <li>"ハント ストップ" -> ハントタイマーを停止する</li>
                 </ul>
@@ -230,7 +230,7 @@
                 <div class="modifier_volume_label">100%</div>
             </div>
             <div class="modifier_option">
-                <input type="checkbox" id="mute_timer_countdown" name="mute_timer_countdown" class="settings_check" onclick="mute('countdown');saveSettings();"><label for="mute_timer_countdown">タイマークールダウンをミュート</label>
+                <input type="checkbox" id="mute_timer_countdown" name="mute_timer_countdown" class="settings_check" onclick="mute('countdown');saveSettings();"><label for="mute_timer_countdown">タイマークールタイムをミュート</label>
             </div>
             <div class="modifier_option less_pad">
                 <input type="checkbox" id="mute_timer_toggle" name="mute_timer_toggle" class="settings_check" onclick="mute('toggle');saveSettings();"><label for="mute_timer_toggle">タイマー開始・停止音をミュート</label>
@@ -338,7 +338,7 @@
                     <hr>
                     <div class="timer_block">
                         <div class="modifier_smudge_timer yfont white" onclick="toggle_cooldown_timer()">
-                            クールダウン
+                            クールタイム
                             <div class="modifier_note_2">('C' で開始・停止)</div>
                         </div>
                         <div class="line_labels" onclick="toggle_cooldown_timer();send_cooldown_timer();">
