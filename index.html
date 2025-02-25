@@ -668,7 +668,7 @@
     <script>
         function closeShutdown(){
             $("#shutdown_blackout").fadeToggle(400)
-            setCookie("shutdown_agreement","AGREED",7)
+            setCookie("shutdown_agreement","AGREED",1)
         }
 
         function openShutdown(){
@@ -684,7 +684,6 @@
             mquery = window.matchMedia("screen and (pointer: coarse) and (max-device-width: 600px)")
             if(mquery.matches){
                 $("#incompatible").show()
-                setCookie("shutdown_agreement","AGREED",7)
             }
             else{
                 let load_wiki = new Promise((resolve, reject) => {
