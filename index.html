@@ -668,14 +668,19 @@
     <script>
         function closeShutdown(){
             $("#shutdown_blackout").fadeToggle(400)
+            setCookie("shutdown_agreement","AGREED",7)
+        }
+
+        function openShutdown(){
+            $("#shutdown_blackout").fadeToggle(400)
         }
 
         $(window).on('load', function() {
 
             let agreed = getCookie("shutdown_agreement")
             if (!agreed)
-                closeShutdown()
-            
+                openShutdown()
+
             mquery = window.matchMedia("screen and (pointer: coarse) and (max-device-width: 600px)")
             if(mquery.matches){
                 $("#incompatible").show()
